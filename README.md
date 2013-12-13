@@ -8,7 +8,7 @@ Common Node.js helpers
 
 ## Docs
 
-Browse the available helpers [here](#)
+Browse the available helpers [here](http://ddollar.github.io/node-ddollar/ddollar.html)
 
 ## License
 
