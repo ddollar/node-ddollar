@@ -1,4 +1,4 @@
-# ddollar
+# node-ddollar
 
 Common Node.js helpers
 
