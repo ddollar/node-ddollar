@@ -7,6 +7,17 @@ init:
 
 docs:
 	docco src/*.coffee
+	rm -rf /tmp/ddollar-docs
+	mv docs /tmp/ddollar-docs
+	git add -A
+	git stash
+	git checkout gh-pages
+	mv /tmp/ddollar-docs/* .
+	git add -A
+	git commit -am 'updating docs'
+	git push origin gh-pages
+	git checkout master
+	git stash pop
 
 clean-docs:
 	rm -rf docs/
