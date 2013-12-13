@@ -1,0 +1,10 @@
+{
+  "name":    "ddollar",
+  "version": "0.0.1",
+
+  "main": "lib/ddollar.js",
+
+  "dependencies": {
+    "coffee-script": "1.2.x"
+  }
+}
