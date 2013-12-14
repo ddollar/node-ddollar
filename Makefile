@@ -35,5 +35,5 @@ build:
 
 dist: clean init docs build
 
-publish: dist
+publish: dist publish-docs
 	npm publish
