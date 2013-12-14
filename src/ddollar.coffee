@@ -1,5 +1,8 @@
 coffee = require("coffee-script")
 
+# **ddollar**
+#
+#     dd = require("ddollar")
 module.exports =
 
   # **arrayify(obj)**
@@ -20,7 +23,7 @@ module.exports =
 
   # **every(ms)**
   #
-  #     dd.delay 500, ->
+  #     dd.every 500, ->
   #       console.log "another 500ms have passed"
   every: (ms, cb) -> setInterval cb, ms
 
