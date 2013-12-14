@@ -19,6 +19,7 @@ publish-docs: docs
 	git add -A
 	git stash
 	git checkout gh-pages
+	rm -rf *
 	mv /tmp/ddollar-docs/* .
 	git add -A
 	git commit -am 'updating docs'
