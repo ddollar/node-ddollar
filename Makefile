@@ -22,7 +22,7 @@ publish-docs: docs
 	rm -rf *
 	mv /tmp/ddollar-docs/* .
 	git add -A
-	git commit -am 'updating docs'
+	git commit -am 'updating docs' --allow-empty
 	git push origin gh-pages
 	git checkout master
 	git stash pop
