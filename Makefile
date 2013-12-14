@@ -5,8 +5,15 @@ PATH := ./node_modules/.bin:${PATH}
 init:
 	npm install
 
-docs:
+docs: clean-docs build-docs
+
+build-docs:
 	docco src/*.coffee
+
+clean-docs:
+	rm -rf docs/
+
+publish-docs: docs
 	rm -rf /tmp/ddollar-docs
 	mv docs /tmp/ddollar-docs
 	git add -A
@@ -18,9 +25,6 @@ docs:
 	git push origin gh-pages
 	git checkout master
 	git stash pop
-
-clean-docs:
-	rm -rf docs/
 
 clean: clean-docs
 	rm -rf lib/ test/*.js
