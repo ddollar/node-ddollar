@@ -8,7 +8,7 @@ init:
 docs: clean-docs build-docs
 
 build-docs:
-	docco src/*.coffee
+	node_modules/.bin/docco src/*.coffee
 
 clean-docs:
 	rm -rf docs/
@@ -31,7 +31,7 @@ clean: clean-docs
 	rm -rf lib/ test/*.js
 
 build:
-	coffee -o lib/ -c src/
+	node_modules/.bin/coffee -o lib/ -c src/
 
 dist: clean init docs build
 

@@ -4,5 +4,8 @@
   "main": "lib/ddollar.js",
   "dependencies": {
     "coffeescript": "2.2.x"
+  },
+  "devDependencies": {
+    "docco": "0.8.x"
   }
 }
