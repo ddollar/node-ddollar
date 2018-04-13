@@ -25,7 +25,7 @@ module.exports =
   #
   #     dd.every 500, ->
   #       console.log "another 500ms have passed"
-  every: (ms, cb) -> setInterval cb, ms
+  every: (ms, cb) -> cb; setInterval cb, ms
 
   # **keys(hash)**
   #
