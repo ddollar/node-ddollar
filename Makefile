@@ -25,7 +25,7 @@ publish-docs: docs
 	git commit -am 'updating docs' --allow-empty
 	git push origin gh-pages
 	git checkout master
-	git stash pop
+	git stash pop || true
 
 clean: clean-docs
 	rm -rf lib/ test/*.js
