@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>ddollar.coffee</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="../docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>ddollar.coffee</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>coffee = <span class="hljs-built_in">require</span>(<span class="hljs-string">"coffeescript"</span>)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p><strong>ddollar</strong></p>
+<pre><code>dd = <span class="hljs-built_in">require</span>(<span class="hljs-string">"ddollar"</span>)
+</code></pre>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">module</span>.exports =</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p><strong>arrayify(obj)</strong></p>
+<pre><code>dd.arryify(<span class="hljs-literal">null</span>)  <span class="hljs-comment">#=&gt; []</span>
+dd.arrayify(<span class="hljs-number">5</span>)    <span class="hljs-comment">#=&gt; [5]</span>
+dd.arrayify([<span class="hljs-number">5</span>])  <span class="hljs-comment">#=&gt; [5]</span>
+</code></pre>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  arrayify: <span class="hljs-function"><span class="hljs-params">(obj)</span> -&gt;</span>
+    <span class="hljs-keyword">return</span> [] <span class="hljs-keyword">unless</span> obj?
+    <span class="hljs-keyword">return</span> obj <span class="hljs-keyword">if</span> Array.isArray(obj)
+    [obj]</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p><strong>delay(ms)</strong></p>
+<pre><code>dd.delay <span class="hljs-number">500</span>, <span class="hljs-function">-&gt;</span>
+  <span class="hljs-built_in">console</span>.log <span class="hljs-string">"waited 500 ms"</span>
+</code></pre>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  delay: <span class="hljs-function"><span class="hljs-params">(ms, cb)</span> -&gt;</span> setTimeout cb, ms</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p><strong>every(ms)</strong></p>
+<pre><code>dd.every <span class="hljs-number">500</span>, <span class="hljs-function">-&gt;</span>
+  <span class="hljs-built_in">console</span>.log <span class="hljs-string">"another 500ms have passed"</span>
+</code></pre>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  every: <span class="hljs-function"><span class="hljs-params">(ms, cb)</span> -&gt;</span> cb; setInterval cb, ms</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p><strong>keys(hash)</strong></p>
+<pre><code>dd.keys(a:<span class="hljs-number">1</span>, b:<span class="hljs-number">2</span>)  <span class="hljs-comment">#=&gt; ["a", "b"]</span>
+</code></pre>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  keys: <span class="hljs-function"><span class="hljs-params">(hash)</span> -&gt;</span> key <span class="hljs-keyword">for</span> key, val <span class="hljs-keyword">of</span> hash</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p><strong>merge(hash, hash)</strong></p>
+<pre><code>dd.merge({a:<span class="hljs-number">1</span>, b:<span class="hljs-number">2</span>}, b:<span class="hljs-number">3</span>)  <span class="hljs-comment">#=&gt; {"a":1, "b":3}</span>
+</code></pre>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  merge: coffee.helpers.merge</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p><strong>now()</strong></p>
+<pre><code>dd.now()  <span class="hljs-comment">#=&gt; 1000111222333</span>
+</code></pre>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  now: <span class="hljs-function">-&gt;</span> (<span class="hljs-keyword">new</span> Date()).getTime()</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p><strong>reduce()</strong></p>
+<pre><code>dd.reduce [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], <span class="hljs-number">0</span>, <span class="hljs-function"><span class="hljs-params">(ax, i)</span> -&gt;</span> ax + i  <span class="hljs-comment">#=&gt; 6</span>
+</code></pre>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  reduce: <span class="hljs-function"><span class="hljs-params">(obj, start, cb)</span> -&gt;</span> obj.reduce(cb, start)</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p><strong>values()</strong></p>
+<pre><code>dd.values(a:<span class="hljs-number">1</span>, b:<span class="hljs-number">2</span>) <span class="hljs-comment">#=&gt; [1, 2]</span>
+</code></pre>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  values: <span class="hljs-function"><span class="hljs-params">(hash)</span> -&gt;</span> (val <span class="hljs-keyword">for</span> key, val <span class="hljs-keyword">of</span> hash)</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
