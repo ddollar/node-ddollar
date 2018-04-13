@@ -1,11 +1,7 @@
-PATH := ./node_modules/.bin:${PATH}
-
-.PHONY : init clean-docs clean build dist publish
+.PHONY: init build-docs clean-docs publish-docs build clean docs publish
 
 init:
 	npm install
-
-docs: clean-docs build-docs
 
 build-docs:
 	node_modules/.bin/docco src/*.coffee
@@ -27,13 +23,13 @@ publish-docs: docs
 	git checkout master
 	git stash pop || true
 
-clean: clean-docs
-	rm -rf lib/ test/*.js
-
 build:
 	node_modules/.bin/coffee -o lib/ -c src/
 
-dist: clean init docs build
+clean: clean-docs
+	rm -rf lib/ test/*.js
 
-publish: dist publish-docs
+docs: clean-docs build-docs
+
+publish: clean init publish-docs build
 	npm publish
