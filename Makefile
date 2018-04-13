@@ -6,7 +6,7 @@ init:
 build: init
 	node_modules/.bin/coffee -o lib/ -c src/
 
-clean: clean-docs
+clean:
 	rm -rf lib/ test/*.js
 
 docs: init
